@@ -1,27 +1,44 @@
 # F1 Telemetry Analysis
 
-Analysis of real Formula 1 telemetry data using Python and the FastF1 library.
+A multi-file Python project analysing real Formula 1 race data using the FastF1 API.
 
-## What this project does
+## Files
 
-- Plots lap time progression across a full race for the top drivers
-- Compares fastest lap speed traces between drivers
-- Visualises tyre strategy across the race
+### analysis.py — 2024 British Grand Prix
+Analyses lap time progression, fastest lap speed trace, and tyre strategy for Verstappen, Hamilton, and Norris.
 
-## Race analysed
+### analysis_2026_japan.py — 2026 Japanese Grand Prix
+Analyses lap time progression, fastest lap speed trace, and tyre strategy for Antonelli, Piastri, and Leclerc.
 
-2024 British Grand Prix — Silverstone
+### team_analysis_2026.py — 2026 Season Team Comparison
+Compares Mercedes, Ferrari, and McLaren across the first three races of 2026 (Australia, China, Japan).
+- Average race pace per team per circuit
+- Fastest lap trends per driver across all three races
+- Tyre strategy breakdown for the Japanese GP
 
-## Tools used
+## Charts generated
+| File | Description |
+|---|---|
+| lap_time_progression.png | 2024 British GP lap times — VER, HAM, NOR |
+| speed_trace.png | 2024 British GP fastest lap speed trace |
+| tyre_strategy.png | 2024 British GP tyre strategy |
+| japan_2026_lap_times.png | 2026 Japanese GP lap times — ANT, PIA, LEC |
+| japan_2026_speed_trace.png | 2026 Japanese GP speed trace |
+| japan_2026_tyre_strategy.png | 2026 Japanese GP tyre strategy |
+| team_avg_pace_2026.png | 2026 average race pace by team |
+| driver_fastest_laps_2026.png | 2026 fastest lap trends per driver |
+| japan_tyre_strategy_teams_2026.png | 2026 Japanese GP tyre strategy — 6 drivers |
 
-- Python
-- FastF1
-- Matplotlib
-- Pandas
+## Tech stack
+- Python 3.13
+- FastF1 (F1 timing and telemetry data)
+- NumPy (data processing)
+- Matplotlib (visualisation)
 
-## Output
-
-Three charts generated from real F1 timing and telemetry data:
-- `lap_times.png` — Lap time progression for VER, HAM, NOR
-- `speed_trace.png` — Speed trace comparison on fastest laps
-- `tyre_strategy.png` — Tyre compound strategy visualisation
+## How to run
+```
+pip install fastf1 matplotlib numpy
+python analysis.py
+python analysis_2026_japan.py
+python team_analysis_2026.py
+```
